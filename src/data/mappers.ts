@@ -1,6 +1,8 @@
-import { ActionDTO, ProjectDTO } from '../../../models';
+import { ActionDTO } from '../models/action.dto';
+import { ProjectDTO } from '../models/project.dto';
 
-export const intToBoolean = (int: number | boolean) => (int === 1 ? true : false);
+export const intToBoolean = (int: number | boolean) =>
+  int === 1 ? true : false;
 
 export const booleanToInt = (bool: boolean) => (bool === true ? 1 : 0);
 
