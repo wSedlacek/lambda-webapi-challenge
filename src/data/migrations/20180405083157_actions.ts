@@ -1,5 +1,7 @@
-exports.up = function(knex) {
-  return knex.schema.createTable('actions', function(actions) {
+import Knex from 'knex';
+
+export const up = (knex: Knex) =>
+  knex.schema.createTable('actions', function(actions) {
     actions.increments();
 
     actions
@@ -15,8 +17,5 @@ exports.up = function(knex) {
     actions.text('notes').notNullable();
     actions.boolean('completed').defaultTo(false);
   });
-};
 
-exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('actions');
-};
+export const down = (knex: Knex) => knex.schema.dropTableIfExists('actions');
